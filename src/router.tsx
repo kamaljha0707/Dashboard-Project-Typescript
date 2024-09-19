@@ -8,6 +8,10 @@ import AuthLayout from "./layouts/AuthLayout";
 
 
 const router = createBrowserRouter([
+  {
+    path:"/",
+    element: <DashboardLayout/>,
+    },
     {
       path: "dashboard",
       element: <DashboardLayout/>,
