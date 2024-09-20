@@ -49,7 +49,10 @@ function LoginPage() {
       <CardHeader>
         <CardTitle className="text-2xl">Login</CardTitle>
         <CardDescription>
-          Enter your email below to login to your account.
+          Enter your email below to login to your account. <br/>
+          {mutation.isError && (
+            <span className="text-red-500 mt-4 text-sm">Enter vaild email or password</span>
+          )}
         </CardDescription>
       </CardHeader>
       <CardContent className="grid gap-4">
