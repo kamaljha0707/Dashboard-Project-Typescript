@@ -13,6 +13,7 @@ import { Link, useNavigate } from "react-router-dom"
 import { useRef } from "react"
 import { useMutation } from "@tanstack/react-query"
 import { login } from "@/Apis/api"
+import { LoaderCircle } from "lucide-react"
 
 function LoginPage() {
   const navigate = useNavigate()
@@ -63,7 +64,11 @@ function LoginPage() {
       </CardContent>
       <CardFooter>
         <div className="w-full">
-        <Button onClick={handleLoginSubmit} className="w-full">Sign in</Button>
+        <Button onClick={handleLoginSubmit} disabled={mutation.isPending} className="w-full flex gap-3 item-center">
+          {mutation.isPending && 
+          (<LoaderCircle color="#ffffff" className= "animate-spin"/>)}
+          <span>Sign in</span>
+           </Button>
         <div className="mt-4 text-center text-sm">
         Don't have an account?{" "}
         <Link to="/auth/register" className="underline">
