@@ -23,13 +23,9 @@ function LoginPage() {
   const mutation = useMutation({
     mutationFn: login,
     onSuccess:()=>{
-      console.log("login successfully");
       navigate('/dashboard/home')
     },
-
-
   })
-
 
   const handleLoginSubmit= ()=>{
     const email = emailRef.current?.value;

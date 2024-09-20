@@ -8,7 +8,10 @@ const api =axios.create({
 })
 
 
-// login apis 
+// login api 
 export const login = async(data:{email:string, password: string}) =>
      api.post('/api/users/login', data)
 
+// register api 
+export const register = async(data:{name: string, email:string, password: string}) =>
+     api.post('/api/users/register', data)
