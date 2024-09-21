@@ -40,7 +40,6 @@ function LoginPage() {
     
     mutation.mutate({email, password})
     
-
   }
   return (
     <section className="flex justify-center items-center h-screen"> 

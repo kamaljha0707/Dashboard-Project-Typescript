@@ -22,10 +22,14 @@ import {
 import useTokenStore from "@/store"
 
 function DashboardLayout() {
-  const token  = useTokenStore(state=> state.token);
+  const {token, setToken}  = useTokenStore(state=> state);
 
   if(!token){
     return <Navigate to={"/auth/login"} replace/>;
+  }
+
+  const handleLogout= ()=>{
+    setToken("")
   }
   return (
     <div className="grid min-h-screen w-full md:grid-cols-[220px_1fr] lg:grid-cols-[280px_1fr]">
@@ -127,7 +131,9 @@ function DashboardLayout() {
             <DropdownMenuItem>Settings</DropdownMenuItem>
             <DropdownMenuItem>Support</DropdownMenuItem>
             <DropdownMenuSeparator />
-            <DropdownMenuItem>Logout</DropdownMenuItem>
+            <DropdownMenuItem>
+              <Button onClick={handleLogout} variant={"link"} className="text-red-500">Logout</Button>
+              </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
       </header>
