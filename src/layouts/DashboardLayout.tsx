@@ -1,6 +1,7 @@
 import {
     Bell,
     CircleUser,
+    Headset,
     Home,
     Menu,
     Package,
@@ -67,6 +68,16 @@ function DashboardLayout() {
               }}>
               <Package className="h-4 w-4" />
               Books{" "}
+            </NavLink>
+            <NavLink
+              to="/dashboard/support"
+              className={({ isActive }) => {
+                  return `flex items-center gap-3 rounded-sm px-3 py-2 text-muted-foreground transition-all hover:text-primary ${
+                       isActive && 'bg-muted text-primary'
+                  }`;
+              }}>
+              <Headset className="h-4 w-4"  />
+              Support Services{" "}
             </NavLink>
             <NavLink
               to="/dashboard/settings"
@@ -146,7 +157,7 @@ function DashboardLayout() {
             <DropdownMenuLabel>My Account</DropdownMenuLabel>
             <DropdownMenuSeparator />
             <Link to="/dashboard/settings"><DropdownMenuItem >Settings</DropdownMenuItem></Link>
-            <DropdownMenuItem>Support</DropdownMenuItem>
+            <Link to="/dashboard/support"><DropdownMenuItem>Support</DropdownMenuItem></Link> 
             <DropdownMenuSeparator />
             <DropdownMenuItem>
               <Button onClick={handleLogout} variant={"link"} className="text-red-500">Logout</Button>

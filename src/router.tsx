@@ -7,6 +7,7 @@ import BooksPage from "./pages/BooksPage";
 import AuthLayout from "./layouts/AuthLayout";
 import CreateBooksPage from "./pages/CreateBooksPage";
 import SettingsPage from "./pages/SettingsPage";
+import SupportPage from "./pages/SupportPage";
 
 
 const router = createBrowserRouter([
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
         {
             path: 'settings/',
             element: <SettingsPage />,
+        },
+        {
+            path: 'support/',
+            element: <SupportPage />,
         },
     ],
 },
